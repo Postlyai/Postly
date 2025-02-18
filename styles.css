@@ -9,7 +9,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-    color: #333;
+    color: #5e009c;
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -19,9 +19,11 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background: #1a1a1a;
-    color: white;
-    padding: 20px;
+    background: #ffffff;
+    color: rgb(115, 0, 150);
+    padding: 10px 20px; /* Mantén un padding fijo */
+    height: 70px; /* Establece una altura fija para el header */
+    overflow: hidden; /* Evita que el logo haga crecer el header */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +37,19 @@ header {
     display: none; /* Oculto en escritorio */
     z-index: 1001; /* Asegurar que esté sobre todo */
     position: relative;
+}
+.logo img {
+    height: 200px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantiene la proporción */
+    max-height: 100%; /* Evita que el logo sobrepase el header */
+}
+
+/* Asegurar alineación en el header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
 /* Logo */
@@ -55,7 +70,7 @@ header {
 }
 
 .nav-links li a {
-    color: white;
+    color: rgb(128, 4, 145);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
@@ -76,13 +91,47 @@ section {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* Estilos para el Footer */
 footer {
-    padding: 15px;
-    background: #1a1a1a;
+    background-color: #0D0D1A; /* Color oscuro */
     color: white;
-    font-size: 14px;
+    text-align: center;
+    padding: 10px 0; /* Ajuste del padding */
+    width: 100%;
+    height: auto; /* Se ajusta automáticamente sin sobreexpandirse */
+    min-height: 150px; /* Define un tamaño mínimo sin que crezca demasiado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Contenedor del contenido */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5px; /* Reduce el espacio entre elementos */
+}
+
+/* Estilo del logo */
+.footer-logo {
+    max-width:200px; /* Tamaño máximo del logo */
+    height: auto;
+    margin-bottom: 0.5px;
+}
+
+/* Texto del footer */
+footer p {
+    font-size: 14px;
+    margin: 0.5px 0 0 0;
+    opacity: 0.8;
+}
+
+
+
+
 
 /* Sección Hero Mejorada */
 #hero {
