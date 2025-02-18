@@ -1,0 +1,711 @@
+/* Reset General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegurar que toda la página use un ancho correcto */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* Asegurar que el header y el menú hamburguesa estén por encima */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Para estar por encima del hero */
+}
+
+/* Ajustar el menú hamburguesa */
+.menu-toggle {
+    font-size: 2em;
+    cursor: pointer;
+    display: none; /* Oculto en escritorio */
+    z-index: 1001; /* Asegurar que esté sobre todo */
+    position: relative;
+}
+
+/* Logo */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #52024b;
+}
+
+/* Secciones */
+section {
+    padding: 60px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background: #1a1a1a;
+    color: white;
+    font-size: 14px;
+}
+
+/* Sección Hero Mejorada */
+#hero {
+    padding-top: 100px; /* Asegura que el hero no quede detrás del menú */
+    height: 110vh; /* Reducir altura */
+    background: linear-gradient(135deg, #f8f9fa 0%, #eef1f6 100%);
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Para que no sobresalga */
+}
+
+/* Reducir tamaño del texto en móvil */
+@media (max-width: 768px) {
+    .hero-container h1 {
+        font-size: 1.8rem; /* Más pequeño */
+        line-height: 1.2;
+    }
+
+    .hero-container p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+/* Texto Fantasma en el Fondo */
+.hero-background-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6rem;
+    font-weight: 800;
+    color: rgba(200, 200, 200, 0.1); /* Color súper tenue */
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+
+/* Contenedor del Hero */
+.hero-container {
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Título Mejorado */
+.hero-container h1 {
+    font-size: 3.5rem;
+    font: weight 100000px;;
+    background: linear-gradient(90deg, #580469, #a474e4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-align: center
+    
+}
+
+
+/* Párrafo con mejor legibilidad */
+.hero-container p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 15px;
+    max-width: 100000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+/* Botón de acción principal con morado eléctrico */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #7B1FA2, #8E24AA); /* Morado eléctrico */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, background 0.3s, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(139, 0, 255, 0.4); /* Sombra en tono morado */
+}
+
+/* Efecto Hover */
+.cta-button:hover {
+    background: linear-gradient(135deg, #8E24AA, #AB47BC); /* Cambio a otro tono de morado */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(139, 0, 255, 0.6);
+}
+
+/* Icono dentro del botón */
+.cta-icon {
+    margin-left: 8px;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto de animación al pasar el mouse */
+.cta-button:hover .cta-icon {
+    transform: translateX(5px);
+}
+
+
+
+/* Animación de Aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Sección de Servicios */
+#servicios {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+#servicios h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.servicio {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.servicio img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
+/* Sección FAQ */
+#faq {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+/* Títulos */
+#faq h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+#faq p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de Preguntas */
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Cada pregunta */
+.faq-item.active .faq-answer {
+    opacity: 1;
+    padding: 15px;
+    max-height: 500px; /* Ajuste para evitar cortes */
+    background: #ffffff; /* Fondo blanco */
+    color: #1a1a1a; /* Color oscuro para asegurar visibilidad */
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+
+/* Botón de pregunta */
+.faq-question {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Cambiar el color cuando está activa */
+.faq-item.active .faq-question {
+    background: #7B1FA2;
+    color: white;
+}
+
+/* Icono "+" animado */
+.faq-icon {
+    font-size: 1.5rem;
+    color: #7B1FA2;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotar el icono cuando la pregunta está activa */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background: #7B1FA2;
+    color: white;
+}
+
+/* Respuestas ocultas con animación */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 15px;
+    background: #f8f9fa; /* Color de fondo para asegurar visibilidad */
+    color: #333; /* Texto oscuro */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+/* Cuando la pregunta está activa */
+.faq-item.active .faq-answer {
+    opacity: 1;
+    padding: 15px;
+    max-height: 200px; /* Ajuste para evitar cortes */
+    background: #ffffff; /* Color blanco visible */
+    color: #1a1a1a; /* Asegura contraste */
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Sección de Contacto */
+#contacto {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+/* Título */
+#contacto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Descripción */
+#contacto p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilo especial para el campo de teléfono */
+.telefono-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Código de país */
+.telefono-container select {
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+/* Botón de Enviar */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #a457f1; /* Morado eléctrico */
+    color: rgb(31, 3, 3);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover en botón */
+button:hover {
+    background: #9C27B0; /* Más vibrante */
+    transform: scale(1.05);
+}
+
+
+
+/* Sección de Beneficios */
+#benefits {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor de la sección */
+.benefits-content {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Texto a la izquierda */
+.benefits-text {
+    flex: 1;
+    text-align: left;
+}
+
+.benefits-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.benefits-text p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Lista de Beneficios */
+.benefits-list {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilos de cada beneficio */
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 255, 0.1);
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto 3D */
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 7px 15px rgba(0, 0, 255, 0.2);
+}
+
+/* Iconos */
+.benefit-item img {
+    width: 30px;
+    height: 30px;
+}
+
+/* ✅ Ajustes en dispositivos móviles */
+@media (max-width: 768px) {
+    .benefits-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .benefits-text {
+        text-align: center;
+    }
+
+    .benefits-list {
+        align-items: center; /* Centra los beneficios en móviles */
+    }
+
+    .benefit-item {
+        max-width: 100%; /* Que se adapten al ancho */
+        justify-content: center;
+        flex-direction: row; /* Asegura que el ícono y el texto estén en línea */
+    }
+}
+
+/* Sección de Testimonios */
+#testimonios {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+/* Título */
+#testimonios h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Descripción */
+#testimonios p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de testimonios */
+.testimonios-container {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cada testimonio */
+.testimonial {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    color: #333;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Testimonio activo */
+.testimonial.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Autor del testimonio */
+.testimonial h4 {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #7B1FA2; /* Morado eléctrico */
+}
+
+/* Botones de navegación para los testimonios */
+.testimonial-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.testimonial-nav button {
+    background: #7B1FA2; /* Morado eléctrico */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0px 3px 8px rgba(123, 31, 162, 0.3);
+}
+
+/* Efecto hover */
+.testimonial-nav button:hover {
+    background: #9C27B0;
+    transform: scale(1.1);
+}
+
+/* Estilo para los iconos */
+.testimonial-nav button i {
+    font-size: 1.5rem;
+}
+
+/* CTA Final */
+#cta-final {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #733eac, #660261); /* Degradado morado eléctrico a azul */
+    color: white;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+/* Título del CTA */
+#cta-final h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Descripción */
+#cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Botón de CTA */
+.cta-button {
+    background: rgb(255, 255, 255);
+    color: #6a11cb;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Efecto hover */
+.cta-button:hover {
+    background: #fff;
+    color: #430053;
+    transform: scale(1.05);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Asegurar que no esté visible en ningún caso */
+.modal.hidden {
+    display: none !important;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+    background: #7B1FA2; /* Morado eléctrico */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #9C27B0;
+}

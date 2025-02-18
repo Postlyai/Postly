@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<!-- Modal de confirmación -->
+<div id="confirmation-modal" class="modal hidden">
+    <div class="modal-content">
+        <p>✅ Formulario enviado con éxito. Te contactaremos pronto.</p>
+        <button onclick="closeModal()">Aceptar</button>
+    </div>
+</div>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Mi Página</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+    </header>
+    
+
+    <section id="contacto">
+        <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+        <p>Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.</p>
+    
+        <form id="contact-form">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Ej: usuario@email.com" required>
+    
+            <label for="telefono">Tu número telefónico</label>
+            <div class="telefono-container">
+                <select id="codigo-pais" name="codigo-pais">
+                    <option value="+57">🇨🇴 +57</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+34">🇪🇸 +34</option>
+                </select>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3101234567" required>
+            </div>
+    
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+    
+
+</body>
+</html>
