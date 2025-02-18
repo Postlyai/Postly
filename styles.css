@@ -205,8 +205,8 @@ footer {
 /* Ajustes específicos para móviles */
 @media (max-width: 768px) {
     #hero {
-        padding: 30px 15px; /* Reducimos aún más el padding */
-        height: auto; /* Que la altura se adapte al contenido */
+        padding: 55% 15px; /* Reducimos aún más el padding */
+        height: 0.5%; /* Que la altura se adapte al contenido */
     }
 
     .hero-container {
@@ -216,7 +216,7 @@ footer {
     .hero-container h1 {
         font-size: 1.8rem; /* Reducir más el tamaño del título */
         line-height: 1.2; 
-        margin-bottom: 10px; /* Reducir el espacio inferior */
+        margin-bottom: 80px; /* Reducir el espacio inferior */
     }
 
     .hero-container p {
