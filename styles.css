@@ -205,31 +205,31 @@ footer {
 /* Ajustes específicos para móviles */
 @media (max-width: 768px) {
     #hero {
-        padding: 40px 20px; /* Reducir padding para mejorar el espacio */
-        height: auto; /* Ajustar la altura automáticamente */
+        padding: 30px 15px; /* Reducimos aún más el padding */
+        height: auto; /* Que la altura se adapte al contenido */
     }
 
     .hero-container {
-        max-width: 90%; /* Reducir el ancho del contenedor */
-        text-align: center;
+        max-width: 95%;
     }
 
     .hero-container h1 {
-        font-size: 2rem; /* Reducir tamaño de fuente en móvil */
-        line-height: 1.3;
-        word-wrap: break-word; /* Evita que las palabras largas se corten */
+        font-size: 1.8rem; /* Reducir más el tamaño del título */
+        line-height: 1.2; 
+        margin-bottom: 10px; /* Reducir el espacio inferior */
     }
 
     .hero-container p {
         font-size: 1rem;
-        margin-top: 10px;
+        margin-bottom: 10px; /* Reducimos espacio antes del botón */
     }
 
     .cta-button {
         font-size: 1rem;
-        padding: 12px 24px;
+        padding: 10px 20px;
     }
 }
+
 
 
 /* Animación de Aparición */
