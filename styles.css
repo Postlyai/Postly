@@ -755,13 +755,240 @@ button:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Corregimos el error de "hidden" */
+.modal.hidden {
+    display: none !important;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Ajustar tamaño */
+}
+
+/* Mejoramos el botón de cierre */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.modal-content button {
+    background: #7B1FA2; /* Morado eléctrico */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #9C27B0;
+}
+
+
+
+
+
+
+/* Estilos del Dashboard */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar (Menú lateral) */
+.sidebar {
+    width: 250px;
+    background: #121212;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+    background: #6a11cb;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    gap: 50px;
+    display: block;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+/* ---------- MEJORAS EN LA BARRA SUPERIOR ---------- */
+.Headdash {
+    position: fixed;
+    width: calc(100% - 250px); /* Se ajusta al ancho total menos el sidebar */
+    margin-left: 250px; /* Se mueve a la derecha según el ancho del sidebar */
+    top: 0;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+}
+
+.main-content {
+    margin-left: 250px; /* Igual al ancho del sidebar */
+    margin-top: 80px; /* Ajustar para que el contenido no quede oculto detrás del header */
+    padding: 30px;
+    background: #f8f9fa;
+    flex-grow: 1;
+}
+ 
+
+/* Mejorar la barra lateral */
+.sidebar {
+    width: 250px;
+    background: #121212;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Efecto cuando está activa */
+.sidebar nav ul li.active {
+    background: linear-gradient(135deg, #7B1FA2, #8E24AA);
+    border-radius: 8px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre el icono y el texto */
+    font-size: 16px;
+}
+
+/* Ajuste de los íconos */
+.sidebar nav ul li a img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Centrar mejor las tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px; /* Sidebar más pequeño */
+    }
+
+    .Headdash {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-content {
+        margin-left: 70px;
+    }
+}
+
+
+.social-networks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-card {
+    background: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustar tamaño del logo en el sidebar */
+.sidebar .logo img {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Ajustar tamaño de logos en las tarjetas de redes */
+.social-card img {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
 
-/* Asegurar que no esté visible en ningún caso */
 .modal.hidden {
     display: none !important;
 }
@@ -775,7 +1002,7 @@ button:hover {
 }
 
 .modal-content button {
-    background: #7B1FA2; /* Morado eléctrico */
+    background: #7B1FA2;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -785,4 +1012,60 @@ button:hover {
 
 .modal-content button:hover {
     background: #9C27B0;
+}
+
+/* General */
+.hidden {
+    display: none;
+}
+
+.api-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.api-section h3 {
+    color: #6a11cb;
+}
+
+.api-section ol {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.api-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #7B1FA2, #8E24AA);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.api-button:hover {
+    background: linear-gradient(135deg, #8E24AA, #AB47BC);
+}
+
+#api-code {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#api-key-result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
 }

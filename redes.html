@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus Redes Sociales | Postly AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <script>
+        console.log("✅ El script del HTML sí se está ejecutando.");
+    </script>
+    
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/Morado.png" alt="Postly AI">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">🏠 Home</a></li>
+                    <li class="active"><a href="redes.html">📱 Tus Redes Sociales</a></li>
+                    <li><a href="automatiza.html">🤖 Automatiza tus Redes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="Headdash">
+                <h1>📱 Conecta tus Redes Sociales</h1>
+            </header>
+
+            <section class="social-networks">
+                <div class="social-card" data-network="instagram">
+                    <img src="assets/redes/Instagram_Logo.png" alt="Instagram">
+                    <h3>Instagram</h3>
+                </div>
+                <div class="social-card" data-network="linkedin">
+                    <img src="assets/redes/linkedin.png" alt="LinkedIn">
+                    <h3>LinkedIn</h3>
+                </div>
+                <div class="social-card" data-network="tiktok">
+                    <img src="assets/redes/TikTok_logo.png" alt="TikTok">
+                    <h3>TikTok</h3>
+                </div>
+                <div class="social-card" data-network="facebook">
+                    <img src="assets/redes/Facebook_logo.png" alt="Facebook">
+                    <h3>Facebook</h3>
+                </div>
+            </section>
+        </main>
+    </div>
+    <section class="api-section">
+        <p>Para conectar tu cuenta de Instagram a nuestra plataforma, obtén tu API Key con las siguientes opciones:</p>
+    
+        <button id="btn-contact" class="api-button">📞 Contacta con un asesor</button>
+        <button id="btn-diy" class="api-button">⚙️ Hazlo tú mismo</button>
+    
+        <div id="diy-steps" class="hidden">
+            <h3>🛠️ Pasos para obtener tu API Key:</h3>
+            <ol>
+                <li>Abre <a href="https://developers.facebook.com/" target="_blank">Meta for Developers</a></li>
+                <li>Ve a "Mis Aplicaciones"</li>
+                <li>Crea una nueva aplicación</li>
+                <li>Selecciona Instagram y configura la API</li>
+                <li>Añade la cuenta que quieres automatizar</li>
+                <li>Configura un webhook con esta URL: <strong>https://tu-webhook.com</strong></li>
+                <li>Establece la URL de inserción con tu página web</li>
+                <li>Copia la URL generada y ábrela en tu navegador</li>
+                <li>En la nueva página, busca el código en la barra de direcciones</li>
+                <li>Pega el código aquí:</li>
+            </ol>
+            
+            <input type="text" id="api-code" placeholder="Introduce el código aquí">
+            <button id="btn-generate" class="api-button">🔑 Generar API Key</button>
+        </div>
+    
+        <p id="api-key-result" class="hidden"></p>
+    </section>
+    </main>
+    </div>
+<!-- Modal para Conectar Redes -->
+<div class="modal hidden" id="social-modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <h2 id="modal-title">Conectar Red Social</h2>
+        <form id="social-form">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="api-key">API Key (opcional):</label>
+            <input type="text" id="api-key" name="api-key">
+
+            <label for="extra">Información Extra:</label>
+            <textarea id="extra" name="extra"></textarea>
+
+            <button type="submit">Conectar</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

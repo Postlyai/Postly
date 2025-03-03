@@ -168,6 +168,118 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ Script cargado correctamente");
 
+    // Obtener elementos
+    const modal = document.getElementById("social-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const form = document.getElementById("social-form");
+    const closeModal = document.getElementById("close-modal");
 
+    if (!modal || !modalTitle || !form || !closeModal) {
+        console.error("⚠️ No se encontraron los elementos del modal.");
+        return;
+    }
 
+    // 1️⃣ EVENTO: Abrir el modal cuando se haga clic en una red social
+    document.querySelectorAll(".social-card").forEach(card => {
+        card.addEventListener("click", function () {
+            const network = this.getAttribute("data-network");
+            console.log(`🌐 Clic en: ${network}`);
+
+            modalTitle.textContent = `Conectar ${network.charAt(0).toUpperCase() + network.slice(1)}`;
+            form.setAttribute("data-network", network);
+            modal.classList.remove("hidden");
+            modal.style.display = "flex";
+
+            console.log("📌 Modal abierto");
+        });
+    });
+
+    // 2️⃣ EVENTO: Cerrar el modal con la "X"
+    closeModal.addEventListener("click", function () {
+        console.log("🛑 Cerrar modal");
+        modal.classList.add("hidden");
+        modal.style.display = "none";
+    });
+
+    // 3️⃣ EVENTO: Enviar datos al webhook de Make
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const network = this.getAttribute("data-network");
+        const formData = new FormData(this);
+
+        console.log(`🚀 Enviando datos de: ${network}`);
+
+        let makeURL = "";
+        switch (network) {
+            case "instagram":
+                makeURL = "https://hook.make.com/tu-webhook-instagram";
+                break;
+            case "linkedin":
+                makeURL = "https://hook.make.com/tu-webhook-linkedin";
+                break;
+            case "tiktok":
+                makeURL = "https://hook.make.com/tu-webhook-tiktok";
+                break;
+            case "facebook":
+                makeURL = "https://hook.make.com/tu-webhook-facebook";
+                break;
+            default:
+                console.error("⚠️ Red social no reconocida");
+                return;
+        }
+
+        fetch(makeURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(formData)),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(`✅ Conectado a ${network} con éxito`);
+            alert(`Conectado a ${network} con éxito`);
+            modal.classList.add("hidden");
+            modal.style.display = "none";
+            form.reset();
+        })
+        .catch(error => {
+            console.error("❌ Error:", error);
+            alert("Error al conectar, intenta de nuevo.");
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const btnContact = document.getElementById("btn-contact");
+    const btnDiy = document.getElementById("btn-diy");
+    const diySteps = document.getElementById("diy-steps");
+    const btnGenerate = document.getElementById("btn-generate");
+    const apiCodeInput = document.getElementById("api-code");
+    const apiKeyResult = document.getElementById("api-key-result");
+
+    // Redirigir a la página de contacto
+    btnContact.addEventListener("click", function () {
+        window.location.href = "https://tu-sitio.com/contacto";
+    });
+
+    // Mostrar los pasos si eligen hacerlo solos
+    btnDiy.addEventListener("click", function () {
+        diySteps.classList.toggle("hidden");
+    });
+
+    // Generar API Key
+    btnGenerate.addEventListener("click", function () {
+        const apiCode = apiCodeInput.value.trim();
+
+        if (apiCode === "") {
+            alert("Por favor, ingresa el código de verificación.");
+            return;
+        }
+
+        // Simulación de generación de API Key
+        const generatedKey = `API-${btoa(apiCode).substring(0, 10)}`;
+        apiKeyResult.textContent = `Tu API Key es: ${generatedKey}`;
+        apiKeyResult.classList.remove("hidden");
+    });
+});
